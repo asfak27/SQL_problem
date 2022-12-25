@@ -1,0 +1,8 @@
+# Write your MySQL query statement below
+
+SELECT  salesperson.name
+FROM    salesperson
+WHERE   NOT EXISTS (
+SELECT  salesperson.name
+FROM    company c, orders o
+WHERE   salesperson.sales_id = o.sales_id  and c.com_id = o.com_id and c.name = 'RED')

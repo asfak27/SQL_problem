@@ -1,0 +1,12 @@
+# Write your MySQL query statement below
+#TO_DAYS(t1.Date)->Return the number of days between the date and year 0:
+#Syntax-> SELECT TO_DAYS("2017-06-20");
+#The INNER JOIN keyword selects records that have matching values in both tables.
+
+
+SELECT w1.Id 
+FROM Weather w1, Weather w2
+WHERE w1.Temperature > w2.Temperature AND 
+TO_DAYS(w1.recordDate)-TO_DAYS(w2.recordDate)=1;
+
+
